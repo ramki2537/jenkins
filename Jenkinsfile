@@ -8,6 +8,7 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 30, unit: 'MINUTES')
     }
+
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
@@ -20,7 +21,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                      echo "This is first build pipeline script"
+                      echo "This is first build pipeline script new"
                       echo "Project: $PROJECT"
                       echo "Hello ${params.PERSON}"
                       echo "Biography: ${params.BIOGRAPHY}"
